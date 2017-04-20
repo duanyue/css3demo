@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cn">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>css3</title>
+    <style>
+        body{
+            background-color: #dddddd;
+        }
+
+        ul {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        ul li {
+            display: inline-block;
+            list-style: none;
+            margin: 0 20px;
+        }
+
+        ul li a {
+            position: relative;
+            text-decoration: none;
+            color: rgba(0,0,0,.6);
+        }
+
+        ul li a span {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #fff;
+            left: 50%;
+            bottom: 100%;
+            margin-left: -30px;
+        }
+
+        ul li a i {
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-color: #ddd;
+            margin: auto;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+
+        ul li a:hover {
+            color: #fff;
+            transition: all .5s;
+        }
+
+        .a1 span {
+            transform: rotate3d(0,0,1,45deg);
+            -webkit-transform: rotate3d(0,0,1,45deg);
+            opacity: 0;
+        }
+        .a1 span i {
+            transform: scale3d(0,0,0);
+        }
+        ul li .a1:hover span {
+            transform: rotate3d(0,0,0,0deg);
+            -webkit-transform: rotate3d(0,0,0,0deg);
+            opacity: 1;
+            transition: all .5s;
+        }
+        ul li .a1:hover span i {
+            transform: scale3d(1,1,1);
+            -webkit-transform: scale3d(1,1,1);
+            transition: all .5s;
+        }
+
+        .a2 span {
+            transform: translate3d(0,20px,0);
+            -webkit-transform: translate3d(0,20px,0);
+            opacity: 0;
+        }
+        .a2 span i {
+            transform: rotate3d(0,1,0,45deg) translate3d(0,-10px,0) scale3d(0,0,0);
+        }
+
+
+        .a2:hover span {
+            transform: translate3d(0,0,0);
+            -webkit-transform: translate3d(0,0,0);
+            opacity: 1;
+            transition: all .5s;
+        }
+
+        .a2:hover span i {
+            transform: rotate3d(0,0,0,0deg) translate3d(0,0,0) scale3d(1,1,1);
+            transition: all .5s;
+        }
+
+        .a3 span {
+            transform: translate3d(0,-20px,0);
+            opacity: 0;
+        }
+        .a3 span i {
+            transform: rotate3d(0,0,1,360deg);
+        }
+
+        .a3:hover span {
+            transform: translate3d(0,0,0);
+            opacity: 1;
+            transition: all .5s;
+        }
+        .a3:hover span i {
+            transform: rotate3d(0,0,0,0deg);
+            transition: all .5s;
+        }
+
+        .a4 span {
+            transform: scale3d(0,0,0) rotate3d(0,0,1,360deg);
+        }
+        .a4 span i {
+            transform: scale3d(0,0,0) rotate3d(0,0,1,720deg) translate3d(0,-10px,0);
+        }
+
+        .a4:hover span {
+            transform: scale3d(1,1,1) rotate3d(0,0,0,0deg);
+            transition: all .5s;
+        }
+
+        .a4:hover span i {
+            transform: scale3d(1,1,1) rotate3d(0,0,0,0deg) translate3d(0,0,0);
+            transition: all .5s;
+        }
+
+        #face {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-left: 1000px;
+            border: 1px solid #aaa;
+            position: relative;
+            transform: translate3d(0,0,0) scale3d(1,1,1) rotate3d(0,0,0,0deg);
+            transition: all .5s;
+        }
+        #face p {
+            width: 20px;
+            height: 20px;
+            background-color: aqua;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        #face:hover {
+            transform: translate3d(0,300px,0) scale3d(2,2,2) rotate3d(0,0,1,720deg);
+            transition:all 2s;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li>
+            <a href="#" class="a1">
+                主页
+                <span><i></i></span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="a2">
+                主菜单
+                <span><i></i></span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="a3">
+                关于我们
+                <span><i></i></span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="a4">
+                联系我们
+                <span><i></i></span>
+            </a>
+        </li>
+    </ul>
+
+    <div id="face">
+        <p></p>
+    </div>
+
+
+</body>
+</html>
